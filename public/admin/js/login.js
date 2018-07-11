@@ -22,6 +22,9 @@ $(function(){
             min:3,
             max:6,
             message:"长度为3-6位"
+          },
+          callback:{
+            message:"用户名不存在"
           }
         }
       },
@@ -34,6 +37,9 @@ $(function(){
             min:6,
             max:12,
             message:"密码的长度为6-12位"
+          },
+          callback:{
+            message:"密码错误"
           }
         }
       }
@@ -55,12 +61,18 @@ $(function(){
           location.href="index.html"
         }
         if(info.error===1000){
-          alert("用户名不存在")
+          $("form").data("bootstrapValidator").updateStatus("username","INVALID","callback")
         }
         if(info.error===1001){
-          alert("密码错误")
+          //alert("密码错误")
+          $("form").data("bootstrapValidator").updateStatus("password","INVALID","callback")
         }
       }
     })
+  });
+  //表单重置功能
+  $('[type="reset"]').on("click",function(){
+    console.log(11)
+    $("form").data("bootstrapValidator").resetForm(true);
   })
 })
