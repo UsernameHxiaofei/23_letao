@@ -30,6 +30,11 @@ $(function(){
 
   //退出功能
   $(".loginout").on("click",function(){
+    //弹出模态框
+    $("#Modal").modal("show");
+  })
+
+  $(".addBtn").click(function(){
     $.ajax({
       type:"get",
       url:"/employee/employeeLogout",

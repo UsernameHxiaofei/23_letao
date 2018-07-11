@@ -40,6 +40,9 @@ body{
 body.active{
   padding-left:0;
 }
+.red{
+  color: red;
+}
 .lt_aside{
   width: 180px;
   height: 100%;
