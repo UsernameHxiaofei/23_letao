@@ -8,3 +8,107 @@
 .mt_150{
   margin-top:150px;
 }
+.mt_20{
+  margin-top:20px;
+}
+
+/*index页面的样式*/
+/*公共样式的去除*/
+a:link,
+a:visited,
+a:hover,
+a:active{
+  text-decoration: none;
+}
+
+ul,ol{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+html,body{
+  height:100%;
+}
+body{
+  padding-left:180px;
+  transition:all 1s;
+}
+body.active{
+  padding-left:0;
+}
+.lt_aside{
+  width: 180px;
+  height: 100%;
+  background-color: #222D32;
+  position: fixed;
+  left:0;
+  top:0;
+  transition:all 1s;
+}
+.lt_aside.active{
+  left:-180px;
+}
+.lt_brand a{
+  display: block;
+  width: 100%;
+  height: 50px;
+  background-color: #367FA9;
+  text-align: center;
+  line-height:50px;
+  font-size:24px;
+  color: #fff;
+}
+.lt_user{
+  width: 180px;
+  height: 180px;
+  padding-top:30px;
+}
+.lt_user img{
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius:50%;
+  margin:0 auto;
+}
+.lt_user p{
+  text-align: center;
+  height: 40px;
+  line-height:40px;
+  font-size:16px;
+  color: #fff;
+}
+
+.lt_nav li a{
+  display: block;
+  width: 100%;
+  height: 40px;
+  line-height:40px;
+  color: #fff;
+  padding-left:50px;
+  border-left:3px solid transparent;
+}
+.lt_nav li a.current{
+  background-color: #1D1F21;
+  border-left:3px solid #006699;
+}
+.lt_nav .second a{
+  padding-left:70px;
+}
+.lt_main{
+  width: 100%;
+  height: 1000px;
+  background-color: pink;
+}
+.lt_header{
+  width: 100%;
+  height: 50px;
+  background-color: #3C8DBC;
+}
+.lt_header a{
+  color: #fff;
+  font-size: 20px;
+  padding:15px;
+}
