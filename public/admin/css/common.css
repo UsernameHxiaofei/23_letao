@@ -51,6 +51,7 @@ body.active{
   left:0;
   top:0;
   transition:all 1s;
+  z-index:999;
 }
 .lt_aside.active{
   left:-180px;
@@ -109,6 +110,14 @@ body.active{
   width: 100%;
   height: 50px;
   background-color: #3C8DBC;
+  position: fixed;
+  top:0;
+  left:0;
+  padding-left:180px;
+  transition:all 1s;
+}
+.lt_header.active{
+  padding-left:0;
 }
 .lt_header a{
   color: #fff;
@@ -127,4 +136,7 @@ body.active{
 .table.table-bordered td{
   text-align: center;
   vertical-align:middle;
+}
+.mb_20{
+  margin-bottom:20px;
 }

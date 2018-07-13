@@ -25,6 +25,7 @@ $(function(){
   $(".lt_muen").on("click",function(){
     $(".lt_aside").toggleClass("active");
     $("body").toggleClass("active");
+    $(".lt_header").toggleClass("active")
   })
 
 
