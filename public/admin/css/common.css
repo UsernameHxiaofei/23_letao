@@ -122,3 +122,9 @@ body.active{
   height: 400px;
   background-color: #fff;
 }
+/*user*/
+.table.table-bordered th,
+.table.table-bordered td{
+  text-align: center;
+  vertical-align:middle;
+}
