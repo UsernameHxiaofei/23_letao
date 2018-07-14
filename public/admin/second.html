@@ -88,6 +88,7 @@
       <div class="text-right">
         <ul id="paginator"></ul>
       </div>
+
     </div>
   </div>
 </div>
@@ -139,7 +140,7 @@
           </div>
 
           <div class="form-group">
-            <input type="text" class="form-control" name="categoryName" placeholder="请输入二级分类">
+            <input type="text" class="form-control" name="brandName" placeholder="请输入二级分类">
           </div>
 
           <div class="form-group">
@@ -164,7 +165,7 @@
   </div>
 </div>
 
-
+<!-- 模板1 -->
 <script type="text/html" id="secondtpl">
   {{ each rows v i }}
   <tr>
@@ -175,7 +176,7 @@
   </tr>
   {{ /each }}
 </script>
-
+<!-- 模板2 -->
 <script type="text/html" id="firsttpl">
 {{ each rows v i }}
 <li><a data-id={{v.id }} href="#">{{ v.categoryName }}</a></li>
