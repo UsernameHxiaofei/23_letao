@@ -1,0 +1,103 @@
+html,body{
+    height: 100%;
+}
+ul,ol{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.lt_container{
+    width: 100%;
+    height: 100%;
+    background-color: pink;
+    max-width: 640px;
+    min-width:320px;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 45px;
+    padding-bottom: 55px;
+    overflow: hidden;
+}
+.lt_header{
+    width: 100%;
+    height: 45px;
+    background-color: #006699;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-left: 45px;
+    padding-right: 45px;
+    
+    .icon_left,
+    .icon_right{
+        position: absolute;
+        width: 45px;
+        height: 45px;
+        text-align: center;
+        line-height: 45px;
+        color: #fff;
+        font-size: 20px;
+        top: 0;
+    }
+    .icon_left{
+        left: 0;
+    }
+    .icon_right{
+        right: 0;
+    }
+    .icon_center{
+        width: 100%;
+        height: 45px;
+        text-align: center;
+        line-height: 45px;
+        color: #fff;
+    }
+    
+}
+.lt_footer{
+    width: 100%;
+    height: 55px;
+    background-color: #006699;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    li{
+        float: left;
+        width: 25%;
+        height: 100%;
+        text-align: center;
+
+
+        a{  
+            display: block;
+            height: 100%;
+            color: #fff;
+            padding-top: 7px;
+
+        
+            p{
+                color: #fff;
+            }
+        }
+    &.active{
+        a{  
+            color: darkorange;
+            p{
+                color: darkorange;
+            }
+        } 
+    }
+    
+
+        
+    }
+}
+
+.lt_main{
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    position: relative;
+}

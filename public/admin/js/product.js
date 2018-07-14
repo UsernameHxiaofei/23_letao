@@ -46,6 +46,9 @@ $("#fileupload").fileupload({
         $('<img src="'+ data.result.picAddr +'" width="100" alt="">').prependTo($(".img_box"));
         //将每一张的·图片对象渲染到数组中
         imgs.unshift(data.result);
+        if(imgs.length<3){
+            $('form').data("bootstrapValidator").updateStatus("brandLogo","INVALID")
+        }
         
         if(imgs.length===3){
             $('form').data("bootstrapValidator").updateStatus("brandLogo","VALID")
@@ -61,12 +64,13 @@ $("#fileupload").fileupload({
     }
 })
 
+//点击取消按钮重置表单
 // $(".btn-ce").on("click",function(){
-//     alert(1)
-//     // $("#addModal").modal("hide")
-//     // $("form").data("bootstrapValidor").resultForm(true);
-//     // $('.dropdown-text').text("请输入二级分类");
-//     // $(".img_box").empty();
+
+//     $("#addModal").modal("hide")
+//     $("form").data("bootstrapValidor").resetForm(true);
+//     $('.dropdown-text').text("请输入二级分类");
+//     $(".img_box").empty();
 // })
 
 
