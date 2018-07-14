@@ -37,8 +37,11 @@ $(".dropdown-menu").on("click","a",function(){
   $(".dropdown-text").text($(this).text());
   //获取id设置给隐藏域
   $("[name='categoryId']").val($(this).data("id"));
+  //更新校验的状态
+  $("form").data("bootstrapValidator").updateStatus("categoryId","VALID")
 })
 
+// 文件上传初始化
   $("#fileupload").fileupload({
     dataType:"json",
     done:function(e,data){
@@ -47,6 +50,8 @@ $(".dropdown-menu").on("click","a",function(){
       $(".img_box img").attr("src",data.result.picAddr);
       //将图片的地址存储在隐藏域中
       $("[name='brandLogo']").val(data.result.picAddr);
+      //更新校验的状态
+    $("form").data("bootstrapValidator").updateStatus("brandLogo","VALID")
 
     }
   });
@@ -87,7 +92,7 @@ $(".dropdown-menu").on("click","a",function(){
     }
   });
 
-
+  //校验成功事件
   $("form").on("success.form.bv",function(e){
     e.preventDefault();
     $.ajax({
@@ -97,12 +102,15 @@ $(".dropdown-menu").on("click","a",function(){
       dataType:"json",
       success:function(info){
         if(info.success){
+
           $("#addModal").modal("hide");
           page=1;
           render();
+          //重置表单
           $("form").data("bootstrapValidator").resetForm(true);
+          //手动重置
           $(".dropdown-text").text("请输入一级分类");
-          $(".img_box img").attr("src","images/none.png")
+          $(".img_box img").attr("src","images/none.png");
 
         }
 

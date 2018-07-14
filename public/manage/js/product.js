@@ -61,8 +61,8 @@ $(function() {
             }
           },
           // 配置提示框
-          tooltipTitles: function( type, page, current) {
-            switch( type ) {
+          tooltipTitles: function (type,  page,  current) {
+            switch (type) {
               case "first":
                 return "首页";
               case "last":
