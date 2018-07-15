@@ -1,0 +1,47 @@
+.search{
+    padding: 10px;
+    position: relative;
+    
+    input{
+        border: 1px solid #007aff;
+        height: 36px;
+        border-radius:5px;
+        font-size: 12px;
+        line-height: 36px;
+        margin: 0;
+    }
+
+    button{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        border: 1px solid #007aff;
+        height: 36px;
+        border-radius:0,5px,5px,0;
+        background-color: #007aff;
+        width: 60px;
+        color: #fff;
+    }
+}
+
+.nav{
+    height: 30px;
+    background-color: #ccc;
+    line-height: 30px;
+    text-align: center;
+    font-size: 12px;
+    li{
+        float: left;
+        width: 25%;
+
+        &.current{
+            a{
+                color: orange;
+            }
+        }
+
+        a{
+            color: #999;
+        }
+    }
+}

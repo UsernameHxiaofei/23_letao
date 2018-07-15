@@ -13,7 +13,7 @@
     <!-- 引入公共的样式 -->
     <link rel="stylesheet" href="./css/common.css">
     <!-- 引入自己的样式 -->
-    <link rel="stylesheet" href="./css/category.css">
+    <link rel="stylesheet" href="./css/search.css">
     <title>乐淘商城</title>
 </head>
 
@@ -22,52 +22,40 @@
     <div class="lt_container">
         <!-- 头部 -->
         <div class="lt_header">
-            <a href="index.html" class="icon_left">
-                <i class="fa fa-home"></i>
+            <a href="javascript:history.go(-1);" class="icon_left">
+                <i class="mui-icon mui-icon-back"></i>
             </a>
-            <div class="icon_center">乐淘云购</div>
-            <a href="search.html" class="icon_right">
-                <i class="fa fa-search"></i>
-            </a>
+            <div class="icon_center">搜索中心</div>
+           
         </div>
         <!-- 主体 -->
         <div class="lt_main">
+            <!-- 区域滚动 -->
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!--这里放置真实显示的DOM内容-->
+                    <!-- 搜索框 -->
+                    <div class="search">
+                        <input type="text" placeholder="请输入所搜关键字">
+                        <button class="btn-search">搜索</button>
+                    </div>
 
-            <div class="category_left">
-                <!-- 区域滚动 -->
-                <div class="mui-scroll-wrapper">
-                    <div class="mui-scroll">
-                        <ul class="menu">
-                            <!-- 坑 -->
-                        </ul>
+                    <div class="lt_context">
+                        <!-- 坑 -->
                     </div>
                 </div>
             </div>
-
-
-            <div class="category_right">
-                <!-- 区域滚动 -->
-                <div class="mui-scroll-wrapper">
-                    <div class="mui-scroll">
-                        <ul class="pp">
-                            <!-- 坑 -->
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-
         </div>
         <!-- 底部 -->
         <div class="lt_footer">
             <ul>
-                <li>
+                <li class="active">
                     <a href="index.html">
                         <i class="fa fa-home"></i>
                         <p>首页</p>
                     </a>
                 </li>
-                <li class="active">
+                <li>
                     <a href="category.html">
                         <i class="fa fa-bars"></i>
                         <p>分类页</p>
@@ -90,37 +78,42 @@
     </div>
 
 
-    <!-- 一级分类的模板 -->
-    <script type="text/html" id="firsttpl">
-        {{ each rows v i }}
-            <li data-id="{{ v.id }}">
-                <a href="#">{{ v.categoryName }}</a>
-            </li>
-        {{ /each }}
-    </script>
+    <!-- 模板 -->
+    <script type="text/html" id="tpl">
 
-    <script type="text/html" id="secondtpl">
-
-        {{ if rows.length ===0}}
-            <p>没有更多的商信息了</p>
-        {{ /if }}
-        {{ each rows v i }}
-        <li>
-                <a href="#">
-                    <img src="{{ v.brandLogo }}" alt="">
-                    <p>{{ v.brandName }}</p>
-                </a>
-            </li>
-        {{ /each }}
+        {{ if info.length== 0 }}
+            <p>没有历史记录</p>
+        {{ else }}
+        
+        <p class="mui-clearfix">
+                <span class="mui-pull-left">所搜历史</span>
+                <span class="mui-pull-right deleteAll">
+                    <i class="fa fa-trash"></i>清空记录</span>
+            </p>
+            <div class="search_history">
+                <ul>
+                        {{ each info v i }}
+                   <li>
+                        <span class="mui-pull-left">{{ v }}</span>
+                        <i data-id="{{ i }}" class="mui-icon mui-icon-closeempty mui-pull-right delete"></i>
+                    </li>
+                    {{ /each }}
+                    
+                    
+                </ul>
+            </div>
+            {{ /if }}
+           
     </script>
 
 
 
     <script src="./lib/mui/js/mui.min.js"></script>
-    <script src="./lib/zepto/zepto.min.js"></script>
-    <script src="./lib/artTemplate//template-web.js"></script>
     <script src="./js/common.js"></script>
-    <script src="./js/category.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./lib/zepto//zepto.min.js"></script>
+
+    <script src="./js/search.js"></script>
 </body>
 
 </html>
